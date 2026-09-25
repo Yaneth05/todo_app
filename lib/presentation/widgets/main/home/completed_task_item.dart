@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/presentation.dart';
 
 class CompletedTaskItem extends StatelessWidget {
   final Task task;
@@ -16,18 +17,7 @@ class CompletedTaskItem extends StatelessWidget {
           SizedBox(
             height: 26,
             width: 30,
-            child: Transform.scale(
-              scale: 1.3,
-              child: Checkbox(
-                value: true,
-                onChanged: (_) {},
-                shape: const CircleBorder(),
-                side: BorderSide(color: AppColors.textTertiary, width: 1),
-                activeColor: AppColors.accent,
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-            ),
+            child: Center(child: TaskCheckbox(value: true, onChanged: (_) {})),
           ),
           SizedBox(width: 12),
 

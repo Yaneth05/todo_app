@@ -51,11 +51,11 @@ class _HomePageState extends State<HomePage> {
     ];
     return Scaffold(
       backgroundColor: AppColors.canvas,
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 72, 0, 0),
+      body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 8),
             HomeHeader(),
             SizedBox(height: 35),
             if (hasTasks) ...[

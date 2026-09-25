@@ -37,7 +37,8 @@ class HomeHeader extends StatelessWidget {
           SizedBox(height: 17),
           LinearProgressIndicator(
             minHeight: 2,
-            value: 1,
+            value: .33,
+            borderRadius: BorderRadius.circular(6),
             backgroundColor: Color(0xFFEAE4DB),
             color: AppColors.accent,
           ),
