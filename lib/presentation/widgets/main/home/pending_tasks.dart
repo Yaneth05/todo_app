@@ -26,7 +26,7 @@ class PendingTasks extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TaskDetailPage(task: task),
+                    builder: (context) => TaskDetailsPage(task: task),
                   ),
                 );
               },

@@ -3,16 +3,16 @@ import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 import 'package:user_todo/presentation/presentation.dart';
 
-class TaskDetailPage extends StatefulWidget {
+class TaskDetailsPage extends StatefulWidget {
   final Task task;
 
-  const TaskDetailPage({super.key, required this.task});
+  const TaskDetailsPage({super.key, required this.task});
 
   @override
-  State<TaskDetailPage> createState() => _TaskDetailScreenState();
+  State<TaskDetailsPage> createState() => _TaskDetailsPageState();
 }
 
-class _TaskDetailScreenState extends State<TaskDetailPage> {
+class _TaskDetailsPageState extends State<TaskDetailsPage> {
   bool esCompletada = false;
 
   @override

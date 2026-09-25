@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 
-class TaskNewNote extends StatelessWidget {
-  const TaskNewNote({super.key});
+class AddTaskNote extends StatelessWidget {
+  const AddTaskNote({super.key});
 
   @override
   Widget build(BuildContext context) {

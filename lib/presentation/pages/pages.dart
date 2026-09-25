@@ -1,4 +1,4 @@
+export 'main/add_task/add_task.dart';
+export 'main/edit_task/edit_task.dart';
 export 'main/home/home.dart';
-export 'main/task_detail/task_detail.dart';
-export 'main/task_edit/task_edit.dart';
-export 'main/task_new/task_new.dart';
+export 'main/task_details/task_details.dart';

@@ -61,7 +61,7 @@ class ActionsTask extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TaskEditPage(task: task),
+                      builder: (context) => EditTaskPage(task: task),
                     ),
                   );
                 },

@@ -59,7 +59,7 @@ class _CompletedTasksPanelState extends State<CompletedTasks> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TaskDetailPage(task: task),
+                            builder: (context) => TaskDetailsPage(task: task),
                           ),
                         );
                       },

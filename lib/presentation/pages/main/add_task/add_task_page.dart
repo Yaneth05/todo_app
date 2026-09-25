@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
-import 'package:user_todo/models/models.dart';
 import 'package:user_todo/presentation/presentation.dart';
 
-class TaskEditPage extends StatelessWidget {
-  final Task task;
-  const TaskEditPage({super.key, required this.task});
+class AddTaskPage extends StatelessWidget {
+  const AddTaskPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +15,7 @@ class TaskEditPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TaskFormHeader(
-                tituloEncabezado: "EDITAR TAREA",
-                texto: task.title,
-              ),
+              TaskFormHeader(tituloEncabezado: "NUEVA TAREA"),
               // SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 5),
@@ -54,12 +49,7 @@ class TaskEditPage extends StatelessWidget {
                   DateButton(texto: "Alta", seleccionado: false),
                 ],
               ),
-              TaskNote(),
-              SizedBox(height: 40),
-              SizedBox(
-                width: double.infinity,
-                child: ShowModalButtonDelete(task: task),
-              ),
+              AddTaskNote(),
             ],
           ),
         ),
