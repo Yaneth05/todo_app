@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 
-class EmptyTasks extends StatelessWidget {
-  const EmptyTasks({super.key});
+class EmptyTasksList extends StatelessWidget {
+  const EmptyTasksList({super.key});
 
   @override
   Widget build(BuildContext context) {

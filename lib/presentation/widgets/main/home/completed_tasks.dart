@@ -8,11 +8,11 @@ class CompletedTasks extends StatefulWidget {
   const CompletedTasks({super.key, required this.completedTasks});
 
   @override
-  State<CompletedTasks> createState() => _CompletedTasksPanelState();
+  State<CompletedTasks> createState() => _CompletedTasksState();
 }
 
-class _CompletedTasksPanelState extends State<CompletedTasks> {
-  bool mostrarCompletadas = true;
+class _CompletedTasksState extends State<CompletedTasks> {
+  bool showCompleted = true;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -22,14 +22,14 @@ class _CompletedTasksPanelState extends State<CompletedTasks> {
       expandedHeaderPadding: EdgeInsets.zero,
       expansionCallback: (index, isExpanded) {
         setState(() {
-          mostrarCompletadas = isExpanded;
+          showCompleted = isExpanded;
         });
       },
       children: [
         ExpansionPanel(
           canTapOnHeader: true,
 
-          isExpanded: mostrarCompletadas,
+          isExpanded: showCompleted,
           backgroundColor: Colors.transparent,
           headerBuilder: (context, isExpanded) {
             return Row(
@@ -63,7 +63,7 @@ class _CompletedTasksPanelState extends State<CompletedTasks> {
                           ),
                         );
                       },
-                      child: TaskListCompleted(tasksCompleted: task),
+                      child: CompletedTaskItem(task: task),
                     ),
                     const Divider(height: 1, color: AppColors.divider),
                   ],

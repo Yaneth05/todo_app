@@ -15,7 +15,7 @@ class AddTaskPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TaskFormHeader(tituloEncabezado: "NUEVA TAREA"),
+              TaskFormHeader(title: "NUEVA TAREA"),
               // SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 5),
@@ -25,13 +25,13 @@ class AddTaskPage extends StatelessWidget {
               Wrap(
                 spacing: 8,
                 children: [
-                  DateButton(texto: "Hoy", seleccionado: false),
+                  OptionButton(label: "Hoy", isSelected: false),
 
-                  DateButton(texto: "Mañana", seleccionado: true),
+                  OptionButton(label: "Mañana", isSelected: true),
 
-                  DateButton(texto: "Esta semana", seleccionado: false),
+                  OptionButton(label: "Esta semana", isSelected: false),
 
-                  DateButton(texto: "Sin fecha", seleccionado: false),
+                  OptionButton(label: "Sin fecha", isSelected: false),
                 ],
               ),
               // SizedBox(height: 30),
@@ -42,11 +42,11 @@ class AddTaskPage extends StatelessWidget {
               Wrap(
                 spacing: 8,
                 children: [
-                  DateButton(texto: "Baja", seleccionado: false),
+                  OptionButton(label: "Baja", isSelected: false),
 
-                  DateButton(texto: "Media", seleccionado: true),
+                  OptionButton(label: "Media", isSelected: true),
 
-                  DateButton(texto: "Alta", seleccionado: false),
+                  OptionButton(label: "Alta", isSelected: false),
                 ],
               ),
               AddTaskNote(),

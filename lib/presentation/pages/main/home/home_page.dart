@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool hayTareas = true;
+  bool hasTasks = true;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             HomeHeader(),
             SizedBox(height: 35),
-            if (hayTareas) ...[
+            if (hasTasks) ...[
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 10),
             ] else ...[
-              EmptyTasks(),
+              EmptyTasksList(),
             ],
           ],
         ),

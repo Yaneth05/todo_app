@@ -3,14 +3,14 @@ import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 import 'package:user_todo/presentation/presentation.dart';
 
-class ActionsTask extends StatelessWidget {
-  final bool esCompletada;
+class TaskActions extends StatelessWidget {
+  final bool isCompleted;
   final Task task;
   final VoidCallback onPressed;
 
-  const ActionsTask({
+  const TaskActions({
     super.key,
-    required this.esCompletada,
+    required this.isCompleted,
     required this.task,
     required this.onPressed,
   });
@@ -33,7 +33,7 @@ class ActionsTask extends StatelessWidget {
                   ),
                 ),
                 onPressed: onPressed,
-                child: esCompletada
+                child: isCompleted
                     ? Text('Marcar como pendiente')
                     : Text('Marcar como hecha'),
               ),
@@ -76,7 +76,7 @@ class ActionsTask extends StatelessWidget {
             ),
 
             SizedBox(width: 10),
-            Expanded(child: ShowModalButtonDelete(task: task)),
+            Expanded(child: DeleteTaskButton(task: task)),
           ],
         ),
       ],

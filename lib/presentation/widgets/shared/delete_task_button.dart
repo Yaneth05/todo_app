@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 
-class ShowModalButtonDelete extends StatelessWidget {
+class DeleteTaskButton extends StatelessWidget {
   final Task task;
-  const ShowModalButtonDelete({super.key, required this.task});
+  const DeleteTaskButton({super.key, required this.task});
 
   @override
   Widget build(BuildContext context) {

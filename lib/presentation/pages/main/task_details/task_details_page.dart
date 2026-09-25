@@ -13,7 +13,7 @@ class TaskDetailsPage extends StatefulWidget {
 }
 
 class _TaskDetailsPageState extends State<TaskDetailsPage> {
-  bool esCompletada = false;
+  bool isCompleted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +24,18 @@ class _TaskDetailsPageState extends State<TaskDetailsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TaskHeader(esCompletada: esCompletada, task: widget.task),
+            TaskHeader(isCompleted: isCompleted, task: widget.task),
             SizedBox(height: 25),
             Divider(height: 1, color: AppColors.divider),
             SizedBox(height: 15),
-            InfoTask(task: widget.task),
+            TaskInfo(task: widget.task),
             SizedBox(height: 40),
-            ActionsTask(
-              esCompletada: esCompletada,
+            TaskActions(
+              isCompleted: isCompleted,
               task: widget.task,
               onPressed: () {
                 setState(() {
-                  esCompletada = !esCompletada;
+                  isCompleted = !isCompleted;
                 });
               },
             ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 
 class TaskFormHeader extends StatelessWidget {
-  final String? texto;
-  final String tituloEncabezado;
+  final String? taskTitle;
+  final String title;
 
-  const TaskFormHeader({super.key, this.texto, required this.tituloEncabezado});
+  const TaskFormHeader({super.key, this.taskTitle, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TaskFormHeader extends StatelessWidget {
               child: Text("Cancelar"),
             ),
 
-            Text(tituloEncabezado, style: AppText.label),
+            Text(title, style: AppText.label),
 
             TextButton(
               style: TextButton.styleFrom(
@@ -44,7 +44,7 @@ class TaskFormHeader extends StatelessWidget {
         SizedBox(height: 25),
 
         TextField(
-          controller: TextEditingController(text: texto),
+          controller: TextEditingController(text: taskTitle),
           style: TextStyle(
             fontSize: 27,
             fontWeight: FontWeight.w600,

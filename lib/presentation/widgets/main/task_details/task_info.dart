@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 
-class InfoTask extends StatelessWidget {
+class TaskInfo extends StatelessWidget {
   final Task task;
-  const InfoTask({super.key, required this.task});
+  const TaskInfo({super.key, required this.task});
 
   @override
   Widget build(BuildContext context) {

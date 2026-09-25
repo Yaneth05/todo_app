@@ -30,7 +30,7 @@ class PendingTasks extends StatelessWidget {
                   ),
                 );
               },
-              child: TaskItem(tasks: task),
+              child: PendingTaskItem(task: task),
             ),
           ],
         );

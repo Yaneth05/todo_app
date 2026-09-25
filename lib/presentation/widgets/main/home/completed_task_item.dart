@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 
-class TaskListCompleted extends StatelessWidget {
-  final Task tasksCompleted;
-  const TaskListCompleted({super.key, required this.tasksCompleted});
+class CompletedTaskItem extends StatelessWidget {
+  final Task task;
+  const CompletedTaskItem({super.key, required this.task});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class TaskListCompleted extends StatelessWidget {
           ),
           SizedBox(width: 12),
 
-          Text(tasksCompleted.title, style: AppText.taskRowDone),
+          Text(task.title, style: AppText.taskRowDone),
         ],
       ),
     );

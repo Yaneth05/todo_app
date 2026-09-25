@@ -41,7 +41,7 @@ class AppText {
     fontWeight: FontWeight.w500,
     letterSpacing: 1.7,
     color: const Color(0xFFB4AB9E),
-  ); // usar con text.toUpperCase()
+  ); // use with text.toUpperCase()
 
   static final taskRowDone = taskRow.copyWith(
     color: AppColors.doneText,

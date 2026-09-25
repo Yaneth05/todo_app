@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 
-class TaskItem extends StatelessWidget {
-  final Task tasks;
-  const TaskItem({super.key, required this.tasks});
+class PendingTaskItem extends StatelessWidget {
+  final Task task;
+  const PendingTaskItem({super.key, required this.task});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class TaskItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(tasks.title, style: AppText.taskRow),
+              Text(task.title, style: AppText.taskRow),
               SizedBox(height: 8),
               Row(
                 children: [
@@ -47,7 +47,7 @@ class TaskItem extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 8),
-                  Text(tasks.date, style: AppText.meta),
+                  Text(task.date, style: AppText.meta),
 
                   const SizedBox(width: 8),
 
@@ -62,7 +62,7 @@ class TaskItem extends StatelessWidget {
 
                   const SizedBox(width: 8),
 
-                  Text(tasks.priority, style: AppText.meta),
+                  Text(task.priority, style: AppText.meta),
                 ],
               ),
             ],

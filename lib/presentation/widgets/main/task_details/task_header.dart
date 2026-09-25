@@ -4,9 +4,9 @@ import 'package:user_todo/models/models.dart';
 
 class TaskHeader extends StatelessWidget {
   final Task task;
-  final bool esCompletada;
+  final bool isCompleted;
 
-  const TaskHeader({super.key, required this.task, required this.esCompletada});
+  const TaskHeader({super.key, required this.task, required this.isCompleted});
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +29,13 @@ class TaskHeader extends StatelessWidget {
 
         SizedBox(height: 34),
 
-        Text(!esCompletada ? "PENDIENTE" : "COMPLETADA", style: AppText.label),
+        Text(!isCompleted ? "PENDIENTE" : "COMPLETADA", style: AppText.label),
 
         SizedBox(height: 10),
 
         Text(
           task.title,
-          style: !esCompletada
+          style: !isCompleted
               ? AppText.detailTitle
               : AppText.detailTitle.copyWith(
                   color: AppColors.doneText,
