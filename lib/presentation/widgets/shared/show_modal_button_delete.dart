@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
-import 'package:user_todo/models/task.dart';
+import 'package:user_todo/core/core.dart';
+import 'package:user_todo/models/models.dart';
 
 class ShowModalButtonDelete extends StatelessWidget {
   final Task task;

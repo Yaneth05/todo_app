@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
-import 'package:user_todo/models/task.dart';
-import 'package:user_todo/presentation/pages/task_edit_page.dart';
-import 'package:user_todo/presentation/shared/show_modal_button_delete.dart';
+import 'package:user_todo/core/core.dart';
+import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/presentation.dart';
 
 class ActionsTask extends StatelessWidget {
   final bool esCompletada;

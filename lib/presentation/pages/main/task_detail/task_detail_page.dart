@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
-import 'package:user_todo/models/task.dart';
-
-import '../widgets/task_detail_page/task_detail_page.dart';
+import 'package:user_todo/core/core.dart';
+import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/presentation.dart';
 
 class TaskDetailPage extends StatefulWidget {
   final Task task;

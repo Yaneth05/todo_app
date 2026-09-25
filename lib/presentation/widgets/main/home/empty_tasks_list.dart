@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
+import 'package:user_todo/core/core.dart';
 
 class EmptyTasks extends StatelessWidget {
   const EmptyTasks({super.key});

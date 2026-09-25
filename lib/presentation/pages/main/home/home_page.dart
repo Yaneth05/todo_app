@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
-import 'package:user_todo/core/theme/app_text.dart';
-import 'package:user_todo/models/task.dart';
-import 'package:user_todo/presentation/pages/task_new_page.dart';
-
-import '../widgets/home_page/home.dart';
+import 'package:user_todo/core/core.dart';
+import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/presentation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

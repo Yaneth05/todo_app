@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_todo/core/theme/app_colors.dart';
-import 'package:user_todo/models/task.dart';
-import 'package:user_todo/presentation/pages/task_detail_page.dart';
-
-import 'home.dart';
+import 'package:user_todo/core/core.dart';
+import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/presentation.dart';
 
 class PendingTasks extends StatelessWidget {
   final List<Task> tasks;
