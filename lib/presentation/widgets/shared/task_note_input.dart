@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 
-class AddTaskNote extends StatelessWidget {
-  const AddTaskNote({super.key});
+class TaskNoteInput extends StatelessWidget {
+  final String? note;
+
+  const TaskNoteInput({super.key, this.note});
 
   @override
   Widget build(BuildContext context) {
@@ -13,21 +15,29 @@ class AddTaskNote extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30, bottom: 5),
           child: Text("NOTA", style: AppText.meta),
         ),
+
         SizedBox(
           width: double.infinity,
-
           child: TextField(
             maxLines: 4,
+
+            controller: TextEditingController(text: note),
+
             decoration: InputDecoration(
               filled: true,
+
               hintText: "Detalles opcionales...",
               hintStyle: AppText.support,
+
               fillColor: const Color(0xFFFFFDFA),
+
               contentPadding: const EdgeInsets.all(14),
+
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
                 borderSide: BorderSide(color: AppColors.border),
               ),
+
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
                 borderSide: BorderSide(color: AppColors.inkSolid),

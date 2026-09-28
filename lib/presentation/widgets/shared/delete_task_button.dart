@@ -23,14 +23,26 @@ class DeleteTaskButton extends StatelessWidget {
               width: double.infinity,
               height: 300,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 21,
+                  vertical: 30,
+                ),
                 child: Column(
                   children: [
-                    Text("¿Eliminar esta tarea?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                    Text(
+                      "¿Eliminar esta tarea?",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
 
                     SizedBox(height: 5),
 
-                    Text("<<${task.title}>>", style: TextStyle(color: Color(0xFF82786E), fontSize: 16)),
+                    Text(
+                      "<<${task.title}>>",
+                      style: TextStyle(color: Color(0xFF82786E), fontSize: 16),
+                    ),
 
                     SizedBox(height: 23),
 
@@ -42,7 +54,9 @@ class DeleteTaskButton extends StatelessWidget {
                           side: BorderSide.none,
                           backgroundColor: AppColors.accent,
                           foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                         onPressed: () {
                           Navigator.pop(context, true);
@@ -58,9 +72,14 @@ class DeleteTaskButton extends StatelessWidget {
                       child: OutlinedButton(
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 15),
-                          side: const BorderSide(color: AppColors.textTertiary, width: 0.5),
+                          side: const BorderSide(
+                            color: AppColors.textTertiary,
+                            width: 0.5,
+                          ),
                           foregroundColor: AppColors.ink,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                         onPressed: () {
                           Navigator.pop(context);
@@ -74,8 +93,31 @@ class DeleteTaskButton extends StatelessWidget {
             );
           },
         );
-        if (result != null) {
-          //TODO: Show snackbar
+        if (result == null) {
+          //tod0 : Show snackbar
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: AppColors.inkSolid,
+              behavior: SnackBarBehavior.floating,
+              margin: const EdgeInsets.fromLTRB(22, 0, 22, 52),
+              duration: const Duration(seconds: 5),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              content: const Text(
+                "Tarea eliminada",
+                style: TextStyle(color: Color(0xFFF6F2EC), fontSize: 14.5),
+              ),
+
+              action: SnackBarAction(
+                label: "DESHACER",
+                textColor: Color(0xFFE9A98B),
+                onPressed: () {
+                  print("Deshacer");
+                },
+              ),
+            ),
+          );
         }
       },
       child: const Text(

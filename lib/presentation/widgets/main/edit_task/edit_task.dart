@@ -1,1 +1,1 @@
-export 'edit_task_note.dart';
+export '../../shared/task_note_input.dart';

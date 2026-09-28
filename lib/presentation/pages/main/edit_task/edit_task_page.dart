@@ -13,7 +13,7 @@ class EditTaskPage extends StatelessWidget {
       backgroundColor: AppColors.canvas,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -51,7 +51,9 @@ class EditTaskPage extends StatelessWidget {
                   OptionButton(label: "Alta", isSelected: false),
                 ],
               ),
-              EditTaskNote(),
+              TaskNoteInput(
+                note: "Incluir alcance, entregables y fechas antes del jueves.",
+              ),
               SizedBox(height: 40),
               SizedBox(
                 width: double.infinity,

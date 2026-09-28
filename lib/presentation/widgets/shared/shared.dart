@@ -2,3 +2,4 @@ export 'delete_task_button.dart';
 export 'option_button.dart';
 export 'task_checkbox.dart';
 export 'task_form_header.dart';
+export 'task_note_input.dart';

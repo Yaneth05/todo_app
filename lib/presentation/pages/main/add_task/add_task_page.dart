@@ -11,7 +11,7 @@ class AddTaskPage extends StatelessWidget {
       backgroundColor: AppColors.canvas,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -49,7 +49,7 @@ class AddTaskPage extends StatelessWidget {
                   OptionButton(label: "Alta", isSelected: false),
                 ],
               ),
-              AddTaskNote(),
+              TaskNoteInput(),
             ],
           ),
         ),

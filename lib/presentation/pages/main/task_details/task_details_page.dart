@@ -19,27 +19,29 @@ class _TaskDetailsPageState extends State<TaskDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.canvas,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 72, left: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TaskHeader(isCompleted: isCompleted, task: widget.task),
-            SizedBox(height: 25),
-            Divider(height: 1, color: AppColors.divider),
-            SizedBox(height: 15),
-            TaskInfo(task: widget.task),
-            SizedBox(height: 40),
-            TaskActions(
-              isCompleted: isCompleted,
-              task: widget.task,
-              onPressed: () {
-                setState(() {
-                  isCompleted = !isCompleted;
-                });
-              },
-            ),
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TaskHeader(isCompleted: isCompleted, task: widget.task),
+              SizedBox(height: 25),
+              Divider(height: 1, color: AppColors.divider),
+              SizedBox(height: 15),
+              TaskInfo(task: widget.task),
+              SizedBox(height: 40),
+              TaskActions(
+                isCompleted: isCompleted,
+                task: widget.task,
+                onPressed: () {
+                  setState(() {
+                    isCompleted = !isCompleted;
+                  });
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
