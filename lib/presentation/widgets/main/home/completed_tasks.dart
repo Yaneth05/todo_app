@@ -28,7 +28,6 @@ class _CompletedTasksState extends State<CompletedTasks> {
       children: [
         ExpansionPanel(
           canTapOnHeader: true,
-
           isExpanded: showCompleted,
           backgroundColor: Colors.transparent,
           headerBuilder: (context, isExpanded) {
@@ -36,7 +35,10 @@ class _CompletedTasksState extends State<CompletedTasks> {
               children: [
                 Text("COMPLETADAS", style: AppText.label),
                 SizedBox(width: 10),
-                Text("2", style: AppText.label),
+                Text(
+                  widget.completedTasks.length.toString(),
+                  style: AppText.label,
+                ),
               ],
             );
           },

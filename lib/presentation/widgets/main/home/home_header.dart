@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:user_todo/core/core.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  final int taskTotal;
+  final int completedTaskTotal;
+
+  const HomeHeader({
+    super.key,
+    required this.taskTotal,
+    required this.completedTaskTotal,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +36,7 @@ class HomeHeader extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "2/6 hechas",
+                "$completedTaskTotal/$taskTotal hechas",
                 style: TextStyle(color: AppColors.textTertiary),
               ),
             ],
