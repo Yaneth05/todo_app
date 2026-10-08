@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 import 'package:user_todo/presentation/presentation.dart';
+import 'package:user_todo/presentation/providers/home_provider.dart';
 
 class PendingTaskItem extends StatelessWidget {
   final Task task;
+
   const PendingTaskItem({super.key, required this.task});
 
   @override
@@ -17,7 +20,14 @@ class PendingTaskItem extends StatelessWidget {
           SizedBox(
             height: 26,
             width: 30,
-            child: Center(child: TaskCheckbox(value: false, onChanged: (_) {})),
+            child: Center(
+              child: TaskCheckbox(
+                value: false,
+                onChanged: (_) {
+                  context.read<HomeProvider>().completeTaskClicked(task);
+                },
+              ),
+            ),
           ),
           SizedBox(width: 10),
           Column(
