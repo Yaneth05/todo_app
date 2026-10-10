@@ -3,7 +3,7 @@ import 'package:user_todo/enums/task_status.dart';
 
 import '../../models/models.dart';
 
-class HomeProvider extends ChangeNotifier {
+class TasksProvider extends ChangeNotifier {
   final List<Task> tasks = [
     Task(
       id: 1,

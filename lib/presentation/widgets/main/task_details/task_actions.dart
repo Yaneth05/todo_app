@@ -58,12 +58,7 @@ class TaskActions extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EditTaskPage(task: task),
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/edit-task', arguments: task);
                 },
                 child: const Text(
                   'Editar',

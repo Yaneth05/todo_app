@@ -13,6 +13,10 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double completedtasksIndicator = taskTotal == 0
+        ? 0
+        : completedTaskTotal / taskTotal;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -42,12 +46,18 @@ class HomeHeader extends StatelessWidget {
             ],
           ),
           SizedBox(height: 17),
-          LinearProgressIndicator(
-            minHeight: 2,
-            value: .33, //completedTaskTotal.toDouble(),
-            borderRadius: BorderRadius.circular(6),
-            backgroundColor: Color(0xFFEAE4DB),
-            color: AppColors.accent,
+          TweenAnimationBuilder<double>(
+            tween: Tween<double>(end: completedtasksIndicator),
+            duration: const Duration(milliseconds: 220),
+            builder: (context, value, child) {
+              return LinearProgressIndicator(
+                minHeight: 2,
+                value: value,
+                borderRadius: BorderRadius.circular(6),
+                backgroundColor: const Color(0xFFEAE4DB),
+                color: AppColors.accent,
+              );
+            },
           ),
         ],
       ),

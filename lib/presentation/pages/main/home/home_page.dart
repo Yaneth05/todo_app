@@ -5,40 +5,32 @@ import 'package:user_todo/presentation/presentation.dart';
 
 import '../../../providers/providers.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  bool hasTasks = true;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return ChangeNotifierProvider(
-      create: (context) => HomeProvider(),
-      child: Consumer<HomeProvider>(
-        builder: (context, homeProvider, child) {
-          final pendingTasks = homeProvider.getPendingTasks();
-          final completedTasks = homeProvider.getCompletedTasks();
+    return Consumer<TasksProvider>(
+      builder: (context, homeProvider, child) {
+        final pendingTasks = homeProvider.getPendingTasks();
+        final completedTasks = homeProvider.getCompletedTasks();
 
-          return Scaffold(
-            backgroundColor: AppColors.canvas,
-            body: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 8),
-                  HomeHeader(
-                    taskTotal: homeProvider.tasks.length,
-                    completedTaskTotal: completedTasks.length,
-                  ),
-                  SizedBox(height: 35),
-                  if (hasTasks) ...[
+        return Scaffold(
+          backgroundColor: AppColors.canvas,
+          body: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 8),
+                HomeHeader(
+                  taskTotal: homeProvider.tasks.length,
+                  completedTaskTotal: completedTasks.length,
+                ),
+                SizedBox(height: 35),
+                if (homeProvider.tasks.isNotEmpty) ...[
+                  if (pendingTasks.isNotEmpty) ...[
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
@@ -59,29 +51,31 @@ class _HomePageState extends State<HomePage> {
                       child: PendingTasks(tasks: pendingTasks),
                     ),
                     SizedBox(height: 10),
+                  ],
+
+                  if (completedTasks.isNotEmpty) ...[
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: CompletedTasks(completedTasks: completedTasks),
                     ),
-                    SizedBox(height: 10),
-                  ] else ...[
-                    EmptyTasksList(),
                   ],
+                ] else ...[
+                  EmptyTasksList(),
                 ],
-              ),
+              ],
             ),
+          ),
 
-            floatingActionButton: AddTaskButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AddTaskPage()),
-                );
-              },
-            ),
-          );
-        },
-      ),
+          floatingActionButton: AddTaskButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddTaskPage()),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }

@@ -23,12 +23,7 @@ class PendingTasks extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TaskDetailsPage(task: task),
-                  ),
-                );
+                Navigator.pushNamed(context, '/detail-task', arguments: task);
               },
               child: PendingTaskItem(task: task),
             ),

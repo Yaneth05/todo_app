@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
 import 'package:user_todo/presentation/presentation.dart';
-import 'package:user_todo/presentation/providers/home_provider.dart';
+import 'package:user_todo/presentation/providers/tasks_provider.dart';
 
 class CompletedTaskItem extends StatelessWidget {
   final Task task;
@@ -23,7 +23,7 @@ class CompletedTaskItem extends StatelessWidget {
               child: TaskCheckbox(
                 value: true,
                 onChanged: (_) {
-                  context.read<HomeProvider>().pendingTaskClicked(task);
+                  context.read<TasksProvider>().pendingTaskClicked(task);
                 },
               ),
             ),
