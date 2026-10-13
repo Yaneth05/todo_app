@@ -93,7 +93,7 @@ class DeleteTaskButton extends StatelessWidget {
             );
           },
         );
-        if (result == null) {
+        if (result == true) {
           //tod0 : Show snackbar
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

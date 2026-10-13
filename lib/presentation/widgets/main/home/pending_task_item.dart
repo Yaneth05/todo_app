@@ -47,7 +47,10 @@ class PendingTaskItem extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 8),
-                  Text(task.date, style: AppText.meta),
+                  Text(
+                    context.read<TasksProvider>().getDateLabel(task.date),
+                    style: AppText.meta,
+                  ),
 
                   const SizedBox(width: 8),
 
@@ -62,7 +65,12 @@ class PendingTaskItem extends StatelessWidget {
 
                   const SizedBox(width: 8),
 
-                  Text(task.priority, style: AppText.meta),
+                  Text(
+                    context.read<TasksProvider>().getPriorityLabel(
+                      task.priority,
+                    ),
+                    style: AppText.meta,
+                  ),
                 ],
               ),
             ],

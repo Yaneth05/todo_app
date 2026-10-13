@@ -3,8 +3,9 @@ import '../enums/enums.dart';
 class Task {
   final int id;
   final String title;
-  final String date;
-  final String priority;
+  final TaskDate date;
+  final TaskPriority priority;
+  final String note;
   final TaskStatus status;
 
   Task({
@@ -12,12 +13,15 @@ class Task {
     required this.title,
     required this.date,
     required this.priority,
+    required this.note,
     required this.status,
   });
+
   Task copyWith({
     String? title,
-    String? date,
-    String? priority,
+    TaskDate? date,
+    TaskPriority? priority,
+    String? note,
     TaskStatus? status,
   }) {
     return Task(
@@ -25,6 +29,7 @@ class Task {
       title: title ?? this.title,
       date: date ?? this.date,
       priority: priority ?? this.priority,
+      note: note ?? this.note,
       status: status ?? this.status,
     );
   }

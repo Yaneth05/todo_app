@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
+
+import '../../../providers/providers.dart';
 
 class TaskInfo extends StatelessWidget {
   final Task task;
@@ -17,7 +20,7 @@ class TaskInfo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("FECHA", style: AppText.meta),
-                Text(task.date),
+                Text(context.read<TasksProvider>().getDateLabel(task.date)),
               ],
             ),
             SizedBox(width: 25),
@@ -32,13 +35,17 @@ class TaskInfo extends StatelessWidget {
                       height: 6,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: getPriorityColor(task.priority),
+                        color: getPriorityColor("${task.priority}"),
 
                         border: Border.all(color: AppColors.textTertiary),
                       ),
                     ),
                     SizedBox(width: 5),
-                    Text(task.priority),
+                    Text(
+                      context.read<TasksProvider>().getPriorityLabel(
+                        task.priority,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -50,7 +57,10 @@ class TaskInfo extends StatelessWidget {
         SizedBox(height: 20),
         Text("NOTA", style: AppText.meta),
         SizedBox(height: 10),
-        Text("Pendiente comentar la sección de precios."),
+        Text(
+          task.note.isEmpty ? "Sin nota" : task.note,
+          style: task.note.isEmpty ? AppText.support : AppText.body,
+        ),
       ],
     );
   }
