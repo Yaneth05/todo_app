@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_todo/core/core.dart';
 import 'package:user_todo/models/models.dart';
+import 'package:user_todo/presentation/providers/tasks_provider.dart';
 
 class DeleteTaskButton extends StatelessWidget {
   final Task task;
@@ -59,6 +61,7 @@ class DeleteTaskButton extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
+                          context.read<TasksProvider>().deleteTask(task.id);
                           Navigator.pop(context, true);
                         },
                         child: const Text('Eliminar'),
@@ -95,6 +98,7 @@ class DeleteTaskButton extends StatelessWidget {
         );
         if (result == true) {
           //tod0 : Show snackbar
+          Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               backgroundColor: AppColors.inkSolid,

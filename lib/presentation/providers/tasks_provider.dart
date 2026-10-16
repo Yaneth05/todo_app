@@ -74,6 +74,11 @@ class TasksProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void deleteTask(int taskId) {
+    tasks.removeWhere((task) => task.id == taskId);
+    notifyListeners();
+  }
+
   void resetFormTask() {
     selectDate = TaskDate.hoy;
     selectPriority = TaskPriority.media;

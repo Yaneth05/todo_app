@@ -35,11 +35,11 @@ class _TaskDetailsPageState extends State<TaskDetailsPage> {
                   SizedBox(height: 25),
                   Divider(height: 1, color: AppColors.divider),
                   SizedBox(height: 15),
-                  TaskInfo(task: widget.task),
+                  TaskInfo(task: task),
                   SizedBox(height: 40),
                   TaskActions(
                     isCompleted: isCompleted,
-                    task: widget.task,
+                    task: task,
                     onPressed: () {
                       setState(() {
                         isCompleted = !isCompleted;
